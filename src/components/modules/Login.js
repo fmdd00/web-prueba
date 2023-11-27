@@ -30,13 +30,27 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
   
-      // Manejar la respuesta aquí (por ejemplo, redirección a la página de perfil si el inicio de sesión es exitoso)
-      console.log("Login successful!");
+      // Check if the response status is in the range 200-299 (indicating success)
+      if (response.ok) {
+        // Parse the response JSON if there's any data
+        const responseData = await response.json();
+  
+        // Assuming the server responds with a token on successful login
+        const token = responseData.token;
+        console.log(response);
+  
+        // Perform any additional actions here, e.g., store the token in localStorage
+  
+        // Redirect the user to the page "/concursos" after a successful login
+        //history.push("/concursos");
+      } else {
+        // Handle unsuccessful login (e.g., show an error message)
+        console.error("Login failed:", response.statusText);
+      }
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
     }
   };
-
   return (
     <div>
       <Bar />
