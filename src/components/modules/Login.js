@@ -1,8 +1,42 @@
-import React from "react";
+//import React from "react";
 import { Link } from "react-router-dom";
 import { Bar } from "../bar/Bar";
+import React, { useEffect, useState } from "react";
 
 const Login = () => {
+  
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:8000/usuarios/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      // Manejar la respuesta aquí (por ejemplo, redirección a la página de perfil si el inicio de sesión es exitoso)
+      console.log("Login successful!");
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
+    }
+  };
+
   return (
     <div>
       <Bar />
@@ -14,7 +48,7 @@ const Login = () => {
             </h1>
           </div>
           <div className="mt-4">
-            <form className="loginForm">
+            <form className="loginForm" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Correo
@@ -24,7 +58,8 @@ const Login = () => {
                   type="text"
                   name="email"
                   id="email"
-                  //required
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="example@email.com"
                 />
               </div>
@@ -37,13 +72,14 @@ const Login = () => {
                   type="password"
                   name="password"
                   id="password"
-                  //required
+                  value={formData.password}
+                  onChange={handleChange}
                   placeholder="***********************"
                 />
               </div>
               <div className="d-grid gap-2">
                 <button className="btn btn-primary" type="submit" style={{ backgroundColor: '#800080', borderColor: '#800080' }}>
-                  <Link to="/perfil" style={{ textDecoration: "none", color: "white" }}>Iniciar Sesión</Link>
+                  Iniciar Sesión
                 </button>
               </div>
               <p className="mt-3" style={{ textAlign: "center" }}>

@@ -1,8 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { Bar } from "../bar/Bar";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+  // Estado local para almacenar los datos del formulario
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  // Función para manejar cambios en los campos del formulario
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Función para manejar el envío del formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Aquí puedes realizar la lógica para enviar los datos al servidor
+    // Puedes utilizar una función como fetch o axios para realizar la solicitud POST
+
+    fetch("http://localhost:8000/usuarios/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Aquí puedes manejar la respuesta del servidor, por ejemplo, redireccionar a otra página
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   return (
     <div>
       <Bar />
@@ -14,7 +54,7 @@ const Register = () => {
             </h1>
           </div>
           <div className="mt-4">
-            <form className="registerForm">
+            <form className="registerForm" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="username" className="form-label">
                   Usuario
@@ -24,7 +64,8 @@ const Register = () => {
                   type="text"
                   name="username"
                   id="username"
-                  //required
+                  value={formData.username}
+                  onChange={handleChange}
                   placeholder="Ingresa tu nombre"
                 />
               </div>
@@ -37,7 +78,8 @@ const Register = () => {
                   type="text"
                   name="email"
                   id="email"
-                  //required
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="example@email.com"
                 />
               </div>
@@ -50,7 +92,8 @@ const Register = () => {
                   type="password"
                   name="password"
                   id="password"
-                  //required
+                  value={formData.password}
+                  onChange={handleChange}
                   placeholder="**********************"
                 />
               </div>
@@ -60,12 +103,7 @@ const Register = () => {
                   className="btn btn-primary"
                   style={{ backgroundColor: "#800080", borderColor: "#800080" }}
                 >
-                  <Link
-                    to="/login"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    Registrarme
-                  </Link>
+                  Registrarme
                 </button>
               </div>
               <p className="mt-3" style={{ textAlign: "center" }}>
