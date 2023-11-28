@@ -2,7 +2,6 @@
 import BarLog from "../bar/BarLog";
 import { Button, Card, CardBody } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
-import DropdownProblemas from './DropdownProblemas'; // Ajusta la ruta según la ubicación real del archivo
 
 
 
