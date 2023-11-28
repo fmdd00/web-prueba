@@ -14,6 +14,7 @@ import ParticipantesAnt from "./components/modules/ParticipantesAnt";
 import CrearProb from "./components/modules/CrearProb";
 import ConcursosPersonal from "./components/modules/ConcursosPersonal";
 import SolveProblems from "./components/modules/SolveProblems";
+import Dashboard from "./components/modules/Dashboard";
 
 
 //Control de rutas
@@ -29,6 +30,7 @@ function App() {
           <Route path='/problemas' element={<Problemas />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/suscripcion' element={<Suscripcion />} />
+          <Route path='/dashboard' element={<Dashboard/>} />
           <Route path='/perfil' element={<Perfil />} />
           <Route path='/leader' element={ <Leaderboard />} />
           <Route path='/about' element={ <About />} />
