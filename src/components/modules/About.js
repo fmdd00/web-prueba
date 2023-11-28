@@ -13,11 +13,11 @@ const About = () => {
         <div style={{ textAlign: "justify" }}>
           <div className="mb-4">
             <h2>Integrantes</h2>
-            <ul class="list-group">
-              <li class="list-group-item">Javier Enrique Olazábal Silva</li>
-              <li class="list-group-item">Lelis Raquel Atencia Mondragón</li>
-              <li class="list-group-item">Angel Cuya Sanchez</li>
-              <li class="list-group-item">Francisco Manuel Díaz Delgado</li>
+            <ul className="list-group">
+              <li className="list-group-item">Javier Enrique Olazábal Silva</li>
+              <li className="list-group-item">Lelis Raquel Atencia Mondragón</li>
+              <li className="list-group-item">Angel Cuya Sanchez</li>
+              <li className="list-group-item">Francisco Manuel Díaz Delgado</li>
             </ul>
           </div>
           <div className="mt-2">
