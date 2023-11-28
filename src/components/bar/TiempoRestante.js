@@ -2,7 +2,9 @@ import React from 'react'
 
 const TiempoRestante = () => {
   return (
-    <div>TiempoRestante</div>
+    <div>
+        <h1>Tiempo restante</h1>
+    </div>
   )
 }
 
