@@ -1,0 +1,5 @@
+DB_URI = mongodb+srv://grupo02:cIoFKrhz2rYDJu56@cluster0.xxjsmyd.mongodb.net/arqui_soft?retryWrites=true&w=majority
+SECRET = clavemuysecreta
+PORT_USUARIOS = 8080
+PORT_PROBLEMAS = 8081
+PORT_CONCURSO = 8082
