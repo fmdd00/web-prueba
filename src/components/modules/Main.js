@@ -20,9 +20,6 @@ const Main = () => {
                             <p className="fs-5" style={{ textAlign: "justify" }}>
                                 Una plataforma en línea que permite a las organizaciones y empresas organizar hackathones.
                             </p>
-                            <p className="fs-5 fst-italic form-text" style={{ textAlign: "justify" }}>
-                                * Trabajo para el curso de ARQUITECTURA DE SOFTWARE
-                            </p>
                         </div>
                     </div>
                     <div className="col-6 mb-4">

@@ -22,7 +22,7 @@ export const Bar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/about">Sobre nosotros</Nav.Link>
+              <Nav.Link href="/about">Acerca de</Nav.Link>
               <NavDropdown title="Recursos" id="collapsible-nav-dropdown">
                 <NavDropdown.Item href="https://github.com/atencia22/arquisoftware-grupo02">Repositorio de GitHub</NavDropdown.Item>
                 <NavDropdown.Divider />
