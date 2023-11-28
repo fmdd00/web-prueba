@@ -13,6 +13,8 @@ import Concursos from "./components/modules/Concursos";
 import ParticipantesAnt from "./components/modules/ParticipantesAnt";
 import CrearProb from "./components/modules/CrearProb";
 import ConcursosPersonal from "./components/modules/ConcursosPersonal";
+import SolveProblems from "./components/modules/SolveProblems";
+
 
 //Control de rutas
 function App() {
@@ -23,6 +25,7 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/solveproblems' element={<SolveProblems />} />
           <Route path='/problemas' element={<Problemas />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/suscripcion' element={<Suscripcion />} />
