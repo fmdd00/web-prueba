@@ -3,8 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 
 const BarLog = () => {
   return (
@@ -15,8 +15,8 @@ const BarLog = () => {
             href="#"
             className="fs-2 fw-bold"
             style={{ color: "#800080" }}
-          ><FontAwesomeIcon icon={faLaptopCode} />
-            ULITORNEOS
+          >
+            <FontAwesomeIcon icon={faLaptopCode} />{" "} ULITORNEOS
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -24,7 +24,9 @@ const BarLog = () => {
               <Nav.Link href="/concursos">Concursos</Nav.Link>
               <Nav.Link href="/problemas">Problemas</Nav.Link>
               <NavDropdown title="Recursos" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="/participantes-anteriores">Participantes anteriores</NavDropdown.Item>
+                <NavDropdown.Item href="/participantes-anteriores">
+                  Participantes anteriores
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/dashboard">
                   Análisis de datos
