@@ -1,6 +1,7 @@
 // ProblemasList.js
-import React from 'react';
+//import React from 'react';
 import ProblemCard from './ProblemCard';
+import React, { useEffect, useState } from "react";
 
 const ProblemasList = ({ problemas }) => {
   return (
