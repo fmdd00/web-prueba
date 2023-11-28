@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 import { Bar } from "../bar/Bar";
 import React, { useEffect, useState } from "react";
+import Nav from "react-bootstrap/Nav";
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +34,7 @@ const Login = () => {
       if (response.ok) {
         // Parse the response JSON if there's any data
         const responseData = await response.json();
-
+        window.location.href = "/inicio";
         // Assuming the server responds with a token on successful login
         const token = responseData.token;
         console.log(response);
@@ -90,13 +92,14 @@ const Login = () => {
                 />
               </div>
               <div className="d-grid gap-2">
-                <button
+              <button
                   className="btn btn-primary"
                   type="submit"
                   style={{ backgroundColor: "#800080", borderColor: "#800080" }}
                 >
                   Iniciar Sesión
                 </button>
+                
               </div>
               <p className="mt-3" style={{ textAlign: "center" }}>
                 ¿No tienes una cuenta?{" "}

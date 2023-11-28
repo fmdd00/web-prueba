@@ -11,16 +11,14 @@ const Concursos = () => {
   
   const [problemas, setProblemas] = useState([]);
   const [concursos, setConcursos] = useState([]);
-  const [nuevoConcurso, setNuevoConcurso] = useState({
+  const [concurso, setConcurso] = useState({
     titulo: '',
     descripcion: '',
     fh_inicio: '',
     fh_fin: '',
-    participant_limit: 0,
-    problemas : [
-      {id : '' , 
-      titulo:''}
-      ],
+    participant_limit: '',
+    problemas: [],
+    participantes: [],
   });
 
   useEffect(() => {
@@ -28,7 +26,7 @@ const Concursos = () => {
     
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/concurso", {
+        const response = await fetch("http://localhost:8000/concurso/all", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -75,54 +73,57 @@ const Concursos = () => {
 
     fetchData2();
 
-
-
-
   }, []);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNuevoConcurso((prevConcurso) => ({
+  const handleInputChange = (problemaId, isChecked) => {
+    if (isChecked) {
+      // Agrega el problema al arreglo de problemas seleccionados
+      setConcurso((prevConcurso) => ({
+        ...prevConcurso,
+        problemas: [
+          ...prevConcurso.problemas,
+          {
+            id: problemaId,
+            titulo: problemas.find((problema) => problema._id === problemaId).titulo,
+          },
+        ],
+      }));
+    } else {
+      // Remueve el problema del arreglo de problemas seleccionados
+      setConcurso((prevConcurso) => ({
+        ...prevConcurso,
+        problemas: prevConcurso.problemas.filter((problema) => problema.id !== problemaId),
+      }));
+    }
+  };
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setConcurso(prevConcurso => ({
       ...prevConcurso,
       [name]: value,
     }));
-    console.log(nuevoConcurso);
   };
 
+  const handleSubmit = event => {
+    console.log(concurso);
+    event.preventDefault();
 
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log('funciona form');
-    try {
-      const response = await fetch("http://localhost:8000/problemas", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: 'include',
-        body: JSON.stringify(nuevoConcurso),
-      });
-
-      if (!response.ok) {
-        let message = await response.json();
-        throw new Error(`HTTP error! Status: ${response.message}`);
-      }
-
-      const data = await response.json();
-
-      // Puedes hacer algo con la respuesta, por ejemplo, actualizar el estado 'problemas'
-      setProblemas((prevProblemas) => [...prevProblemas, data]);
-
-      // Limpiar el formulario después de la creación exitosa
-      setNuevoConcurso({
-        titulo: '',
-        descripcion: '',
-        
-      });
-    } catch (error) {
-      console.error('Error al crear un nuevo concurso:', error);
-    }
+    // Realiza la solicitud al backend
+    fetch('http://localhost:8000/concurso', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', // Asegúrate de incluir esta línea para enviar las cookies
+      body: JSON.stringify(concurso),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Respuesta del servidor:', data);
+        // Puedes agregar lógica adicional aquí, como actualizar el estado del componente después de enviar la solicitud
+      })
+      .catch(error => console.error('Error al enviar la solicitud:', error));
   };
 
 
@@ -135,125 +136,96 @@ const Concursos = () => {
         </h1>
 
         <div className="row">
-  <form onSubmit={handleSubmit} className="col">
+        <form onSubmit={handleSubmit} className="mt-4">
+      <div className="mb-3">
+        <label htmlFor="titulo" className="form-label">
+          Título del concurso:
+        </label>
+        <input
+          type="text"
+          name="titulo"
+          value={concurso.titulo}
+          onChange={handleChange}
+          className="form-control"
+        />
+      </div>
+      {/* Otros campos del formulario también deben ser adaptados con las clases de Bootstrap */}
+      <div className="mb-3">
+        <label htmlFor="descripcion" className="form-label">
+          Descripción del concurso:
+        </label>
+        <textarea
+          name="descripcion"
+          value={concurso.descripcion}
+          onChange={handleChange}
+          className="form-control"
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="fh_inicio" className="form-label">
+          Fecha y hora de inicio:
+        </label>
+        <input
+          type="datetime-local"
+          name="fh_inicio"
+          value={concurso.fh_inicio}
+          onChange={handleChange}
+          className="form-control"
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="fh_fin" className="form-label">
+          Fecha y hora de fin:
+        </label>
+        <input
+          type="datetime-local"
+          name="fh_fin"
+          value={concurso.fh_fin}
+          onChange={handleChange}
+          className="form-control"
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="participant_limit" className="form-label">
+          Límite de participantes:
+        </label>
+        <input
+          type="number"
+          name="participant_limit"
+          value={concurso.participant_limit}
+          onChange={handleChange}
+          className="form-control"
+        />
+      </div>
 
-    <h2 className="text-center fw-bold">Concurso 1</h2>
-    <div className="row g-2 mt-2">
-      <div className="col-sm-6 col-md-6">
-        <label
-          className="form-label fw-bold"
-          style={{ color: "#800080" }}
-        >
-          Descripción
-        </label>
-        <input
-        value={nuevoConcurso.descripcion}
-        onChange={handleInputChange}
-          type="text"
-          className="form-control"
-          placeholder="Descripción del concurso"
-        />
-      </div>
-      <div className="col-6 col-md-3">
-        <label
-          className="form-label fw-bold"
-          style={{ color: "#800080" }}
-        >
-          Fecha Inicio
-        </label>
-        <input value={nuevoConcurso.fh_inicio} onChange={handleInputChange} type="date" className="form-control" />
-      </div>
-      <div className="col-6 col-md-3">
-        <label
-          className="form-label fw-bold"
-          style={{ color: "#800080" }}
-        >
-          Hora Inicio
-        </label>
-        <input
-        value={nuevoConcurso.fh_inicio}
-        onChange={handleInputChange}
-          type="text"
-          className="form-control"
-          placeholder="00:00 am"
-        />
-      </div>
-    </div>
-
-    <div className="row g-2 mt-2">
-      <div className="col-6 col-md-6">
-        <label
-          className="form-label fw-bold"
-          style={{ color: "#800080" }}
-        >
-          Lenguaje(s) de programación
-        </label>
-        <input
-
-          type="text"
-          className="form-control"
-          placeholder="Python, C, C++, Java..."
-        />
-      </div>
-      <div className="col-6 col-md-3">
-        <label
-          className="form-label fw-bold"
-          style={{ color: "#800080" }}
-        >
-          Fecha Fin
-        </label>
-        <input onChange={handleInputChange} type="date" className="form-control" />
-      </div>
-      <div className="col-6 col-md-3">
-        <label
-          className="form-label fw-bold"
-          style={{ color: "#800080" }}
-        >
-          Hora Fin
-        </label>
-        <input
-        onChange={handleInputChange}
-          type="text"
-          className="form-control"
-          placeholder="00:00 am"
-        />
-      </div>
-      <br></br>
-      <div>
+      <div className="mb-3">
         <h5>Problemas asignados</h5>
         <div className="row">
-            {/* Muestra cada problema como una tarjeta en una cuadrícula */}
-            {problemas.map((problema) => (
-              <div key={problema._id} className="col-md-3 mb-3">
-                <Card>
-            <Card.Body className="d-flex align-items-center">
-              {/* Coloca el checkbox y el título en una fila */}
-              <div className="d-flex align-items-center">
-                <input onChange={handleInputChange} type="checkbox" className="checkbox-margin mr-3" />
-                <Card.Text>{problema.titulo}</Card.Text>
+          {/* Muestra cada problema como una tarjeta en una cuadrícula */}
+          {problemas.map(problema => (
+            <div key={problema._id} className="col-md-3 mb-3">
+              <div className="card">
+                <div className="card-body d-flex align-items-center">
+                  {/* Coloca el checkbox y el título en una fila */}
+                  <div className="d-flex align-items-center">
+                    <input
+                      onChange={e => handleInputChange(problema._id, e.target.checked)}
+                      type="checkbox"
+                      className="checkbox-margin mr-3"
+                    />
+                    <p className="card-text">{problema.titulo}</p>
+                  </div>
+                </div>
               </div>
-            </Card.Body>
-          </Card>
-              </div>
-            ))}
-          </div>
-
+            </div>
+          ))}
+        </div>
       </div>
 
-    </div>
-
-    <div className="mt-2">
-      <button
-        type="submit"
-        className="btn btn-primary "
-        variant="outline-light"
-        style={{ backgroundColor: "#800080", borderColor: "#800080" }}
-      >
-        Crear concurso
+      <button style={{ backgroundColor: "#800080", borderColor: "#800080" }} type="submit" className="btn btn-primary">
+        Crear Concurso
       </button>
-    </div>
-
-  </form>
+    </form>
 
   <div>
       <h3>Concursos creados</h3>
@@ -266,6 +238,9 @@ const Concursos = () => {
                     <Card.Title>{concurso.titulo}</Card.Title>
                     <Card.Text>{concurso.descripcion}</Card.Text>
                     {/* Puedes agregar más información según tus necesidades */}
+                    <button style={{ backgroundColor: "#800080", borderColor: "#800080" }} className="btn btn-primary">
+                      Abrir
+                    </button>
                   </Card.Body>
                 </Card>
               </div>

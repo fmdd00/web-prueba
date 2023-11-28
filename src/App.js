@@ -8,6 +8,7 @@ import Contact from "./components/modules/Contact";
 import Suscripcion from "./components/modules/Suscripcion";
 import Perfil from "./components/modules/Perfil";
 import Leaderboard from "./components/modules/Leaderboard";
+import Inicio from "./components/modules/Inicio";
 import About from "./components/modules/About";
 import Concursos from "./components/modules/Concursos";
 import ParticipantesAnt from "./components/modules/ParticipantesAnt";
@@ -33,6 +34,7 @@ function App() {
           <Route path='/dashboard' element={<Dashboard/>} />
           <Route path='/perfil' element={<Perfil />} />
           <Route path='/leader' element={ <Leaderboard />} />
+          <Route path='/inicio' element={ <Inicio />} />
           <Route path='/about' element={ <About />} />
           <Route path='/concursos' element={ <Concursos />} />
           <Route path='/participantes-anteriores' element={ <ParticipantesAnt /> } />
