@@ -1,7 +1,30 @@
-import React from "react";
+//import React from "react";
 import BarLog from "../bar/BarLog";
+import ProblemasList from './ProblemasList';
+import React, { useEffect, useState } from "react";
 
 const Problemas = () => {
+  
+  const [problemas, setProblemas] = useState([]);
+
+  useEffect(() => {
+    // Realiza la llamada a la API para obtener los problemas
+    // Actualiza el estado con los problemas obtenidos
+    
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/problemas');
+        const data = await response.json();
+        setProblemas(data.problems);
+        console.log(response);
+      } catch (error) {
+        console.error('Error al obtener los problemas:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
       <BarLog />
@@ -9,6 +32,10 @@ const Problemas = () => {
         <h1 className="text-left" style={{ color: "#800080" }}>
           Problemas
         </h1>
+        <div>
+          <h1>Lista de Problemas</h1>
+          {/* <ProblemasList problemas={problemas} /> */}
+        </div>
       </div>
     </div>
   );
