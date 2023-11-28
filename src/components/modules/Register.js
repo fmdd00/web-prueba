@@ -107,12 +107,13 @@ const Register = () => {
                 </button>
               </div>
               <p className="mt-3" style={{ textAlign: "center" }}>
-                ¿Ya posees una cuenta? Inicia sesión{" "}
+                ¿Ya posees una cuenta?{" "}
                 <Link
+                  className="fw-bold"
                   style={{ color: "#800080", textDecoration: "none" }}
                   to="/login"
                 >
-                  AQUÍ
+                  Inicia sesión
                 </Link>
               </p>
             </form>

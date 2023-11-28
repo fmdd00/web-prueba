@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/modules/Main";
 import Login from "./components/modules/Login";
 import Register from "./components/modules/Register";
-import Inicio from "./components/modules/Inicio";
 import Problemas from "./components/modules/Problemas";
 import Contact from "./components/modules/Contact";
 import Suscripcion from "./components/modules/Suscripcion";
@@ -12,6 +11,8 @@ import Leaderboard from "./components/modules/Leaderboard";
 import About from "./components/modules/About";
 import Concursos from "./components/modules/Concursos";
 import ParticipantesAnt from "./components/modules/ParticipantesAnt";
+import CrearProb from "./components/modules/CrearProb";
+import ConcursosPersonal from "./components/modules/ConcursosPersonal";
 
 //Control de rutas
 function App() {
@@ -30,6 +31,8 @@ function App() {
           <Route path='/about' element={ <About />} />
           <Route path='/concursos' element={ <Concursos />} />
           <Route path='/participantes-anteriores' element={ <ParticipantesAnt /> } />
+          <Route path='/crear-desafio' element={ <CrearProb /> } />
+          <Route path="/crear-prueba-personalizada" element={ <ConcursosPersonal /> } />
         </Routes>
       </BrowserRouter>
     </div>

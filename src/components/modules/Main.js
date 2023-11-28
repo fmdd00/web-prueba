@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { Bar } from '../bar/Bar'
 import hack from '../images/hack.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Main = () => {
   return (
@@ -18,10 +16,7 @@ const Main = () => {
                         </div>
                         <div className="mt-4">
                             <p className="fs-5" style={{ textAlign: "justify" }}>
-                                Una plataforma en línea que permite a las organizaciones y empresas organizar hackathones.
-                            </p>
-                            <p className="fs-5 fst-italic form-text" style={{ textAlign: "justify" }}>
-                                * Trabajo para el curso de ARQUITECTURA DE SOFTWARE
+                                Bienvenido a una plataforma en línea que permite a las organizaciones y empresas organizar hackathones.
                             </p>
                         </div>
                     </div>

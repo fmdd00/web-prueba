@@ -4,8 +4,9 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "react-bootstrap";
 
 export const Bar = () => {
   return (
@@ -16,48 +17,46 @@ export const Bar = () => {
             href="/"
             className="fs-2 fw-bold"
             style={{ color: "#800080" }}
-          ><FontAwesomeIcon icon={faLaptopCode} />
-            ULITORNEOS
+          >
+            <FontAwesomeIcon icon={faLaptopCode} />{" "}ULITORNEOS
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/about">About</Nav.Link>
-              <NavDropdown title="Resources" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
+              <Nav.Link href="/about">Acerca de</Nav.Link>
+              <NavDropdown title="Recursos" id="collapsible-nav-dropdown">
+                <NavDropdown.Item href="https://github.com/atencia22/arquisoftware-grupo02">Repositorio de GitHub</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                <NavDropdown.Item href="https://github.com/ItsJavito/grupo02-as-backend">
+                  Repo Backend
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="/contact">Contact</Nav.Link>
+              <Nav.Link href="/contact">Contacto</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link to="#">
-                <button className="btn btn-outline-secondary btn-lg" style={{ borderColor: '#800080' }}>
-                  <Link
-                    to="/login"
-                    style={{ textDecoration: "none", color: "purple" }}
-                  >
-                    Login
-                  </Link>
-                </button>
+              <Nav.Link href="/login">
+                <Button
+                  variant="outline-light"
+                  style={{
+                    borderColor: "#800080",
+                    textDecoration: "none",
+                    color: "#800080"
+                  }}
+                >
+                  Login
+                </Button>
               </Nav.Link>
-              <Nav.Link href="#">
-                <button className="btn btn-primary btn-lg" style={{ backgroundColor: '#800080', borderColor: '#800080' }}>
-                  <Link
-                    to="/register"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    Get Started
-                  </Link>
-                </button>
+              <Nav.Link href="/register">
+                <Button
+                  variant="primary"
+                  style={{
+                    backgroundColor: "#800080",
+                    borderColor: "#800080",
+                    textDecoration: "none"
+                  }}
+                >
+                  Get Started
+                </Button>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

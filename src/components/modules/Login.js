@@ -4,8 +4,6 @@ import { Bar } from "../bar/Bar";
 import React, { useEffect, useState } from "react";
 
 const Login = () => {
-  
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -18,10 +16,10 @@ const Login = () => {
     });
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost:8000/usuarios/auth/login", {
         method: "POST",
         headers: {
@@ -31,17 +29,30 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
   
+=======
+      const response = await fetch(
+        "http://localhost:8000/usuarios/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+>>>>>>> 38b8c7cce958bc5cafcde59b0269fb82645bbbf7
       // Check if the response status is in the range 200-299 (indicating success)
       if (response.ok) {
         // Parse the response JSON if there's any data
         const responseData = await response.json();
-  
+
         // Assuming the server responds with a token on successful login
         const token = responseData.token;
         console.log(response);
-  
+
         // Perform any additional actions here, e.g., store the token in localStorage
-  
+
         // Redirect the user to the page "/concursos" after a successful login
         //history.push("/concursos");
       } else {
@@ -93,14 +104,22 @@ const Login = () => {
                 />
               </div>
               <div className="d-grid gap-2">
-                <button className="btn btn-primary" type="submit" style={{ backgroundColor: '#800080', borderColor: '#800080' }}>
+                <button
+                  className="btn btn-primary"
+                  type="submit"
+                  style={{ backgroundColor: "#800080", borderColor: "#800080" }}
+                >
                   Iniciar Sesión
                 </button>
               </div>
               <p className="mt-3" style={{ textAlign: "center" }}>
-                ¿No tienes una cuenta? Regístrate{" "}
-                <Link style={{ color: "#800080", textDecoration: 'none' }} to="/register">
-                  AQUÍ
+                ¿No tienes una cuenta?{" "}
+                <Link
+                  className="fw-bold"
+                  style={{ color: "#800080", textDecoration: "none" }}
+                  to="/register"
+                >
+                  Regístrate
                 </Link>
               </p>
             </form>
