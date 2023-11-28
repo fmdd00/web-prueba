@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { Bar } from '../bar/Bar'
 import hack from '../images/hack.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Main = () => {
   return (
