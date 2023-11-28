@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "react-bootstrap";
 
 export const Bar = () => {
   return (
@@ -33,31 +34,29 @@ export const Bar = () => {
               <Nav.Link href="/contact">Contacto</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link to="#">
-                <button
-                  className="btn btn-outline-secondary btn-lg"
-                  style={{ borderColor: "#800080" }}
+              <Nav.Link href="/login">
+                <Button
+                  variant="outline-light"
+                  style={{
+                    borderColor: "#800080",
+                    textDecoration: "none",
+                    color: "#800080"
+                  }}
                 >
-                  <Link
-                    to="/login"
-                    style={{ textDecoration: "none", color: "purple" }}
-                  >
-                    Login
-                  </Link>
-                </button>
+                  Login
+                </Button>
               </Nav.Link>
-              <Nav.Link href="#">
-                <button
-                  className="btn btn-primary btn-lg"
-                  style={{ backgroundColor: "#800080", borderColor: "#800080" }}
+              <Nav.Link href="/register">
+                <Button
+                  variant="primary"
+                  style={{
+                    backgroundColor: "#800080",
+                    borderColor: "#800080",
+                    textDecoration: "none"
+                  }}
                 >
-                  <Link
-                    to="/register"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    Get Started
-                  </Link>
-                </button>
+                  Get Started
+                </Button>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
