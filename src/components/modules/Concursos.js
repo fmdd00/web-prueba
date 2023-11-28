@@ -14,8 +14,8 @@ const Concursos = () => {
           <div className="row g-2">
             <div className="col-sm-6 col-md-10">
               <h2 className="text-center fw-bold">Concurso 1</h2>
-              <div class="row g-2 mt-2">
-                <div class="col-sm-6 col-md-6">
+              <div className="row g-2 mt-2">
+                <div className="col-sm-6 col-md-6">
                   <label
                     className="form-label fw-bold"
                     style={{ color: "#800080" }}
@@ -28,7 +28,7 @@ const Concursos = () => {
                     placeholder="Descripción del concurso"
                   />
                 </div>
-                <div class="col-6 col-md-3">
+                <div className="col-6 col-md-3">
                   <label
                     className="form-label fw-bold"
                     style={{ color: "#800080" }}
@@ -37,7 +37,7 @@ const Concursos = () => {
                   </label>
                   <input type="date" className="form-control" />
                 </div>
-                <div class="col-6 col-md-3">
+                <div className="col-6 col-md-3">
                   <label
                     className="form-label fw-bold"
                     style={{ color: "#800080" }}
@@ -52,8 +52,8 @@ const Concursos = () => {
                 </div>
               </div>
 
-              <div class="row g-2 mt-2">
-                <div class="col-6 col-md-6">
+              <div className="row g-2 mt-2">
+                <div className="col-6 col-md-6">
                   <label
                     className="form-label fw-bold"
                     style={{ color: "#800080" }}
@@ -66,7 +66,7 @@ const Concursos = () => {
                     placeholder="Python, C, C++, Java..."
                   />
                 </div>
-                <div class="col-6 col-md-3">
+                <div className="col-6 col-md-3">
                   <label
                     className="form-label fw-bold"
                     style={{ color: "#800080" }}
@@ -75,7 +75,7 @@ const Concursos = () => {
                   </label>
                   <input type="date" className="form-control" />
                 </div>
-                <div class="col-6 col-md-3">
+                <div className="col-6 col-md-3">
                   <label
                     className="form-label fw-bold"
                     style={{ color: "#800080" }}
@@ -90,19 +90,19 @@ const Concursos = () => {
                 </div>
               </div>
               <div className="mt-4">
-                <div class="row g-2 text-center">
-                  <div class="col-6 col-md-4">
+                <div className="row g-2 text-center">
+                  <div className="col-6 col-md-4">
                     <Card>
                       <CardBody>Problema A</CardBody>
                     </Card>
                   </div>
-                  <div class="col-6 col-md-4">
+                  <div className="col-6 col-md-4">
                     {/*Dentro de este div iría otra Card con el problema siguiente y así con los demás*/}
                     <Card>
                       <CardBody>Placeholder</CardBody>
                     </Card>
                   </div>
-                  <div class="col-6 col-md-4">
+                  <div className="col-6 col-md-4">
                     <Card>
                       <CardBody>Placeholder</CardBody>
                     </Card>
