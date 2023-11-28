@@ -24,11 +24,14 @@ export const Bar = () => {
             <Nav className="me-auto">
               <Nav.Link href="/about">Acerca de</Nav.Link>
               <NavDropdown title="Recursos" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="https://github.com/atencia22/arquisoftware-grupo02">Repositorio de GitHub</NavDropdown.Item>
-                <NavDropdown.Divider />
                 <NavDropdown.Item href="https://github.com/ItsJavito/grupo02-as-backend">
                   Repo Backend
                 </NavDropdown.Item>
+                <NavDropdown.Item href="https://github.com/fmdd00/web-prueba">
+                  Repo Frontend
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="https://github.com/ulima-arqui-sw/grupo02">Documentación de arquitectura</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="/contact">Contacto</Nav.Link>
             </Nav>
