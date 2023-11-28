@@ -11,6 +11,7 @@ import Perfil from "./components/modules/Perfil";
 import Leaderboard from "./components/modules/Leaderboard";
 import About from "./components/modules/About";
 import Concursos from "./components/modules/Concursos";
+import ParticipantesAnt from "./components/modules/ParticipantesAnt";
 
 //Control de rutas
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/leader' element={ <Leaderboard />} />
           <Route path='/about' element={ <About />} />
           <Route path='/concursos' element={ <Concursos />} />
+          <Route path='/participantes-anteriores' element={ <ParticipantesAnt /> } />
         </Routes>
       </BrowserRouter>
     </div>
