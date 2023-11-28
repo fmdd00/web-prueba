@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/modules/Main";
 import Login from "./components/modules/Login";
 import Register from "./components/modules/Register";
-import Inicio from "./components/modules/Inicio";
 import Problemas from "./components/modules/Problemas";
 import Contact from "./components/modules/Contact";
 import Suscripcion from "./components/modules/Suscripcion";
