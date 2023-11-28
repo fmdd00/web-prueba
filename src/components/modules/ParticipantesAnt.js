@@ -1,13 +1,13 @@
 import React from "react";
 import BarLog from "../bar/BarLog";
 
-const Leaderboard = () => {
+const ParticipantesAnt = () => {
   return (
     <div>
       <BarLog />
       <div className="container mt-4">
         <h1 className="text-left" style={{ color: "#800080" }}>
-          Tabla de clasificaciones
+          Datos de contacto de participantes anteriores
         </h1>
       </div>
       <div className="container col-6 mt-4">
@@ -17,7 +17,7 @@ const Leaderboard = () => {
             <tr>
               <th>Nombre</th>
               <th>Puntaje</th>
-              <th>Preguntas resueltas</th>
+              <th>Correo</th>
               <th>País</th>
               <th>Institución</th>
             </tr>
@@ -26,7 +26,7 @@ const Leaderboard = () => {
             <tr>
               <td>Javier Olazabal</td>
               <td>4000</td>
-              <td>17</td>
+              <td>@aloe.ulima.edu.pe</td>
               <td>Perú</td>
               <td>Ulima</td>
             </tr>
@@ -34,21 +34,21 @@ const Leaderboard = () => {
             <tr>
               <td>Javier Olazabal</td>
               <td>4000</td>
-              <td>17</td>
+              <td>@aloe.ulima.edu.pe</td>
               <td>Perú</td>
               <td>Ulima</td>
             </tr>
             <tr>
               <td>Javier Olazabal</td>
               <td>4000</td>
-              <td>17</td>
+              <td>@aloe.ulima.edu.pe</td>
               <td>Perú</td>
               <td>Ulima</td>
             </tr>
             <tr>
               <td>Javier Olazabal</td>
               <td>4000</td>
-              <td>17</td>
+              <td>@aloe.ulima.edu.pe</td>
               <td>Perú</td>
               <td>Ulima</td>
             </tr>
@@ -59,4 +59,4 @@ const Leaderboard = () => {
   );
 };
 
-export default Leaderboard;
+export default ParticipantesAnt;

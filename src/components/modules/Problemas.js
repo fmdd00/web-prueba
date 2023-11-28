@@ -1,7 +1,6 @@
 //import React from "react";
 import BarLog from "../bar/BarLog";
-import ProblemasList from './ProblemasList';
-import React, { useEffect, useState } from "react";
+import Card from 'react-bootstrap/Card';
 
 const Problemas = () => {
   

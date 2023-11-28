@@ -24,7 +24,7 @@ const BarLog = () => {
               <Nav.Link href="/concursos">Concursos</Nav.Link>
               <Nav.Link href="/problemas">Problemas</Nav.Link>
               <NavDropdown title="Recursos" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Participantes anteriores</NavDropdown.Item>
+                <NavDropdown.Item href="/participantes-anteriores">Participantes anteriores</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/dashboard">
                   Análisis de datos
