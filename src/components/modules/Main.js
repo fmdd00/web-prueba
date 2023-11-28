@@ -18,7 +18,7 @@ const Main = () => {
                         </div>
                         <div className="mt-4">
                             <p className="fs-5" style={{ textAlign: "justify" }}>
-                                Una plataforma en línea que permite a las organizaciones y empresas organizar hackathones.
+                                Bienvenido a una plataforma en línea que permite a las organizaciones y empresas organizar hackathones.
                             </p>
                         </div>
                     </div>

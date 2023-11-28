@@ -11,7 +11,7 @@ const About = () => {
           Este es un trabajo de fin del curso de ARQUITECTURA DE SOFTWARE. Sección 1003.
         </p>
         <div style={{ textAlign: "justify" }}>
-          <div className="mt-2">
+          <div className="mb-4">
             <h2>Integrantes</h2>
             <ul class="list-group">
               <li class="list-group-item">Javier Enrique Olazábal Silva</li>
