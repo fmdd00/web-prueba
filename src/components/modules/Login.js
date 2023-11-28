@@ -19,7 +19,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-<<<<<<< HEAD
       const response = await fetch("http://localhost:8000/usuarios/auth/login", {
         method: "POST",
         headers: {
@@ -29,19 +28,6 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
   
-=======
-      const response = await fetch(
-        "http://localhost:8000/usuarios/auth/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
->>>>>>> 38b8c7cce958bc5cafcde59b0269fb82645bbbf7
       // Check if the response status is in the range 200-299 (indicating success)
       if (response.ok) {
         // Parse the response JSON if there's any data
