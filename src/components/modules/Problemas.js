@@ -2,7 +2,7 @@
 import BarLog from "../bar/BarLog";
 import Card from 'react-bootstrap/Card';
 import React, { useEffect, useState } from "react";
-import ProblemasList from "./ProblemasList";
+
 
 
 const Problemas = () => {
@@ -176,7 +176,7 @@ const Problemas = () => {
 
             
           ))}
-          <div className="row m-4">
+          <div className="container mt-4">
           <button
             type="button"
             onClick={() =>
@@ -197,8 +197,10 @@ const Problemas = () => {
         </div>
 
       </div>
-      <div className="row">
-        <button type="submit" className="btn btn-primary">Crear Problema</button>
+      <div className="container">
+
+        <button style={{ backgroundColor: "#800080", borderColor: "#800080" }} 
+        type="submit" className="btn btn-primary ">Crear Problema</button>
       </div>
       
       
