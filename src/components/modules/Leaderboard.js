@@ -1,10 +1,10 @@
 import React from "react";
 import BarLog from "../bar/BarLog";
-
+import BarLogConcursante from "../bar/BarLogConcursante";
 const Leaderboard = () => {
   return (
     <div>
-      <BarLog />
+      <BarLogConcursante />
       <div className="container mt-4">
         <h1 className="text-left" style={{ color: "#800080" }}>
           Tabla de clasificaciones

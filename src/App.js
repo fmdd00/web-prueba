@@ -16,6 +16,8 @@ import CrearProb from "./components/modules/CrearProb";
 import ConcursosPersonal from "./components/modules/ConcursosPersonal";
 import SolveProblems from "./components/modules/SolveProblems";
 import Dashboard from "./components/modules/Dashboard";
+import ConcursosConcursante from "./components/modules/ConcursosConcursante";
+import ProblemasConcursante from "./components/modules/ProblemasConcursante";
 
 
 //Control de rutas
@@ -37,6 +39,8 @@ function App() {
           <Route path='/inicio' element={ <Inicio />} />
           <Route path='/about' element={ <About />} />
           <Route path='/concursos' element={ <Concursos />} />
+          <Route path='/concursosConcursante' element={ <ConcursosConcursante />} />
+          <Route path='/problemasConcursante' element={ <ProblemasConcursante />} />
           <Route path='/participantes-anteriores' element={ <ParticipantesAnt /> } />
           <Route path='/crear-desafio' element={ <CrearProb /> } />
           <Route path="/crear-prueba-personalizada" element={ <ConcursosPersonal /> } />

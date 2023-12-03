@@ -4,13 +4,13 @@ import Card from 'react-bootstrap/Card';
 import React, { useEffect, useState } from "react";
 import ProblemasList from "./ProblemasList";
 import { Button } from "react-bootstrap";
-
+import BarLogConcursante from "../bar/BarLogConcursante";
 const SolveProblems = () => {
   
 
   return (
     <div>
-      <BarLog />
+      <BarLogConcursante />
       <div className="container mt-4">
         <h1 className="text-left" style={{ color: "#800080" }}>
           Problema A 
