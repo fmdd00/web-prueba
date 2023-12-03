@@ -3,16 +3,24 @@ import BarLog from "../bar/BarLog";
 import { Button, Card, CardBody } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import BarLogConcursante from "../bar/BarLogConcursante";
+import { useLocation } from 'react-router-dom';
+
 
 import { Link } from "react-router-dom";
 
 
 const ProblemasConcursante = () => {
-
+  
+  
+    const location = useLocation();
+    const solucionSubida = location.state?.solucionSubida || false;
+  
+    // Resto del componente...
+  
   
   const [problemas, setProblemas] = useState([]);
-
-
+  
+  
   useEffect(() => {
 
     const fetchData2 = async () => {
@@ -46,7 +54,7 @@ const ProblemasConcursante = () => {
 
   return (
     <div>
-      <BarLogConcursante />
+      <BarLog />
       <div className="container">
         <h1 className="text-left" style={{ color: "#800080" }}>
           Concursos
@@ -68,7 +76,9 @@ const ProblemasConcursante = () => {
                   <div className="d-flex align-items-center">
                     
                   <Link
-                  style={{ backgroundColor: "#800080", borderColor: "#800080" }} className="btn btn-primary"
+                  style={{ 
+                    backgroundColor: solucionSubida ? "#00FF00" : "#800080",
+                    borderColor: solucionSubida ? "#00FF00" : "#800080" }} className="btn btn-primary"
                   to="/solveproblems"
                 >
                   Problema A

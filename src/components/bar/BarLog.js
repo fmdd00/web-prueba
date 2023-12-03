@@ -32,6 +32,10 @@ const BarLog = () => {
                   Análisis de datos
                 </NavDropdown.Item>
               </NavDropdown>
+              <Nav.Link href="/concursosConcursante">Participar</Nav.Link>
+              <Nav.Link href="/problemas">Mis Soluciones</Nav.Link>
+              
+              <Nav.Link href="/dashboard">Ledearboard</Nav.Link>
             </Nav>
             <Nav>
               <NavDropdown title="User1" id="collapsible-nav-dropdown">

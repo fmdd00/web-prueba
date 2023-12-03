@@ -131,7 +131,7 @@ const ConcursosConcursante = () => {
 
   return (
     <div>
-      <BarLogConcursante />
+      <BarLog />
       <div className="container">
         <h1 className="text-left" style={{ color: "#800080" }}>
           Concursos
