@@ -1,19 +1,21 @@
 //import React from "react";
 import BarLog from "../bar/BarLog";
-import Card from 'react-bootstrap/Card';
+
 import React, { useEffect, useState } from "react";
-import ProblemasList from "./ProblemasList";
-import { useNavigate } from 'react-router-dom';
+
+
 import { Button } from "react-bootstrap";
 import BarLogConcursante from "../bar/BarLogConcursante";
+
+import { useParams, useNavigate } from 'react-router-dom';
+
 const SolveProblems = () => {
-  
+    const { problemaId } = useParams();
     const [inputValue, setInputValue] = useState('');
 
     const [solucionSubida, setSolucionSubida] = useState(false);
 
     const navigate = useNavigate();
-    navigate('/problemasConcursante', { state: { solucionSubida: true } });
 
     const handleChange = (e) => {
       setInputValue(e.target.value);
@@ -27,7 +29,13 @@ const SolveProblems = () => {
     // Establece el estado para indicar que se ha subido la solución
     setSolucionSubida(true);
   };
-
+  
+  useEffect(() => {
+    // Redirigir solo si solucionSubida es verdadero
+    if (solucionSubida) {
+      navigate('/problemasConcursante', { state: { solucionSubida: true } });
+    }
+  }, [solucionSubida, navigate]);
     
     const containerStyle = {
       width: '100%',
@@ -46,8 +54,8 @@ const SolveProblems = () => {
         </h2>
 
   <div className="container mt-4 border rounded p-4">
-    <p>Asegúrate de que estás iniciando tu aplicación de la manera correcta, utilizando el comando proporcionado por Create React App. Normalmente, esto es npm start. Durante la ejecución de este comando, las variables de entorno definidas en tu archivo .env deberían cargarse automáticamente.</p>
-  </div>
+    <h1>{ problemaId }</h1>
+    </div>
   <h2 className="text-left" style={{ color: "#800080" }}>
           Solucion
         </h2>

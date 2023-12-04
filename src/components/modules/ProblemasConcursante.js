@@ -73,16 +73,17 @@ const ProblemasConcursante = () => {
               <div className="card">
                 <div className="card-body d-flex align-items-center">
                   {/* Coloca el checkbox y el título en una fila */}
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center justify-content-center ">
                     
                   <Link
-                  style={{ 
-                    backgroundColor: solucionSubida ? "#00FF00" : "#800080",
-                    borderColor: solucionSubida ? "#00FF00" : "#800080" }} className="btn btn-primary"
-                  to="/solveproblems"
-                >
-                  {problema.titulo}
-                </Link>
+  style={{ 
+    backgroundColor: "#800080",
+    borderColor: "#800080" }}
+  className="btn btn-primary"
+  to={`/solveproblems/${problema.descripcion}`}
+>
+  {problema.titulo}
+</Link>
                   </div>
                 </div>
               </div>
