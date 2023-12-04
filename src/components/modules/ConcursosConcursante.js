@@ -154,7 +154,7 @@ const ConcursosConcursante = () => {
                   style={{ backgroundColor: "#800080", borderColor: "#800080" }} className="btn btn-primary"
                   to="/problemasConcursante"
                 >
-                  Regístrate
+                  Iniciar
                 </Link>
                   </Card.Body>
                 </Card>

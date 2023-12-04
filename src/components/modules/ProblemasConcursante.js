@@ -81,7 +81,7 @@ const ProblemasConcursante = () => {
                     borderColor: solucionSubida ? "#00FF00" : "#800080" }} className="btn btn-primary"
                   to="/solveproblems"
                 >
-                  Problema A
+                  {problema.titulo}
                 </Link>
                   </div>
                 </div>
